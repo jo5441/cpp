@@ -137,3 +137,4 @@ void playMineSweeper(int total) {
         std::cout << "\n성공! 탐색 성공!!\n";
 }
 
+
