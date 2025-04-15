@@ -1,22 +1,35 @@
+#include <iostream>
 #include "MyTime.h"
+using namespace std;
 
 int main() {
     MyTime t1, t2, t3;
 
-    t1.convert(3754.567);  // 1:02:34:567
-    t2.read();             // 사용자 입력 받기
-    t3 = t1.add(t2);       // 시간 더하기
+    cout << "첫 번째 시간 입력:" << endl;
+    t1.read();
 
-    std::cout << "t1: ";
+    cout << "두 번째 시간 입력:" << endl;
+    t2.read();
+
+    t3 = t1.add(t2);
+
+    cout << "첫 번째 시간: ";
     t1.print();
-    std::cout << "t2: ";
+
+    cout << "두 번째 시간: ";
     t2.print();
-    std::cout << "t3: ";
+
+    cout << "합계 시간: ";
     t3.print();
 
-    t3.reset();
-    std::cout << "t3 after reset: ";
-    t3.print();
+    cout << "초 단위 입력 (예: 3674.321): ";
+    double duration;
+    cin >> duration;
+
+    MyTime converted;
+    converted.convert(duration);
+    cout << "변환된 시간: ";
+    converted.print();
 
     return 0;
 }
